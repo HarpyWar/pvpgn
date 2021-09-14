@@ -200,7 +200,7 @@ namespace pvpgn
 #endif
 #endif
 
-			/* allows identifers (specificly column names) to be quoted using double quotes (") in addition to ticks (`) */
+			/* allows identifiers (specifically column names) to be quoted using double quotes (") in addition to ticks (`) */
 			sql_mysql_query("SET sql_mode='ANSI_QUOTES'");
 
 			return 0;
@@ -226,7 +226,7 @@ namespace pvpgn
 			t_sql_res *res;
 
 			if (mysql == NULL) {
-				eventlog(eventlog_level_error, __FUNCTION__, "mysql driver not initilized");
+				eventlog(eventlog_level_error, __FUNCTION__, "mysql driver not initialized");
 				return NULL;
 			}
 
@@ -252,7 +252,7 @@ namespace pvpgn
 		static int sql_mysql_query(const char * query)
 		{
 			if (mysql == NULL) {
-				eventlog(eventlog_level_error, __FUNCTION__, "mysql driver not initilized");
+				eventlog(eventlog_level_error, __FUNCTION__, "mysql driver not initialized");
 				return -1;
 			}
 
@@ -345,7 +345,7 @@ namespace pvpgn
 		static void sql_mysql_escape_string(char *escape, const char *from, int len)
 		{
 			if (mysql == NULL) {
-				eventlog(eventlog_level_error, __FUNCTION__, "mysql driver not initilized");
+				eventlog(eventlog_level_error, __FUNCTION__, "mysql driver not initialized");
 				return;
 			}
 			p_mysql_real_escape_string(mysql, escape, from, len);

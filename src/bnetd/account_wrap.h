@@ -245,7 +245,7 @@ namespace pvpgn
 		extern int account_set_currentatteam(t_account * account, unsigned int teamcount);
 		extern int account_get_currentatteam(t_account * account);
 
-		extern int account_get_highestladderlevel(t_account * account, t_clienttag clienttag); //func will compare levels for AT, Solo/Team Ladder and out the higest level of the 3
+		extern int account_get_highestladderlevel(t_account * account, t_clienttag clienttag); //func will compare levels for AT, Solo/Team Ladder and out the highest level of the 3
 
 		// Determines the length of XP bar in profiles screen
 		extern int account_get_profile_calcs(t_account * account, int xp, unsigned int level);

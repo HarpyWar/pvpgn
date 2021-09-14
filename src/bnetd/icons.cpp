@@ -498,7 +498,7 @@ namespace pvpgn
 		}
 
 
-		/* Return comma delimeted icons from stash
+		/* Return comma delimited icons from stash
 		*/
 		extern std::string customicons_stash_get_list(t_clienttag clienttag, bool return_alias)
 		{

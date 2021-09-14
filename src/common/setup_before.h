@@ -169,7 +169,7 @@ const unsigned CLAN_DEFAULT_MIN_INVITES = 2;
 
 const unsigned MAX_FRIENDS = 20;
 
-/* maximum ammount of bytes sent in a single server.c/sd_tcpoutput call */
+/* maximum amount of bytes sent in a single server.c/sd_tcpoutput call */
 const unsigned BNETD_MAX_OUTBURST = 16384;
 
 /* default files relative to FILE_DIR */
@@ -387,7 +387,7 @@ const int BNETD_MAX_SOCKVAL = 8192;
  * select() hackery... works most places, need to add autoconf checks
  * because some systems may redefine FD_SETSIZE, have it as a variable,
  * or not have the concept of such a value.
- * dizzy: this is a total hack. only WIN32 so far specifies this as beeing
+ * dizzy: this is a total hack. only WIN32 so far specifies this as being
  * "legal"; in UNIX in general it should be NOT because the kernel interface
  * of select will never notice your userland changes to the fd_sets
  */

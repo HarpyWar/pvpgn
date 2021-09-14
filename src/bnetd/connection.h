@@ -196,7 +196,7 @@ namespace pvpgn
 					/* FIXME: this "optimization" is so confusing leading to many possible bugs */
 					struct connection *	routeconn;
 					t_anongame *	anongame;
-					/* those will be filled when recieving 0x53ff and wiped out after 54ff */
+					/* those will be filled when receiving 0x53ff and wiped out after 54ff */
 					char const * client_proof;
 					char const * server_proof;
 				} w3;

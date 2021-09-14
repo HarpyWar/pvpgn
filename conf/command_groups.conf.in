@@ -94,7 +94,7 @@
 #		-- can /aop users for the channel they are admin of
 #		-- can /op & /deop users for the channel they are admin of
 #		-- can /kick /ban & /unban users for the channel they are admin of
-#		-- can /vop users for the chnnel they are admin of
+#		-- can /vop users for the channel they are admin of
 #		-- can /voice & /devoice users for the channel they are admin of
 #	-- Channel Operator - operator status for channel set to true - use --> /op <username>
 #		-- can /op & /deop users for the channel they are operator of

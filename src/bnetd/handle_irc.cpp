@@ -216,7 +216,7 @@ namespace pvpgn
 				realname = text;
 
 				if (conn_get_user(conn)) {
-					irc_send(conn, ERR_ALREADYREGISTRED, ":You are already registred");
+					irc_send(conn, ERR_ALREADYREGISTRED, ":You are already registered");
 				}
 				else {
 					eventlog(eventlog_level_debug, __FUNCTION__, "[{}] got USER: user=\"{}\" realname=\"{}\"", conn_get_socket(conn), user, realname);
@@ -260,7 +260,7 @@ namespace pvpgn
 				e = irc_get_listelems(params[0]);
 				/* FIXME: support wildcards! */
 
-				/* start amadeo: code was sent by some unkown fellow of pvpgn (maybe u wanna give us your name
+				/* start amadeo: code was sent by some unknown fellow of pvpgn (maybe u wanna give us your name
 				   for any credits), it adds nick-registration, i changed some things here and there... */
 				for (i = 0; ((e) && (e[i])); i++) {
 					if (strcasecmp(e[i], "NICKSERV") == 0) {

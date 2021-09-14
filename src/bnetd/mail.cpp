@@ -441,7 +441,7 @@ namespace pvpgn
 				}
 
 				mbox.erase(std::atoi(token.c_str()));
-				message_send_text(c, message_type_info, c, localize(c, "Succesfully deleted message."));
+				message_send_text(c, message_type_info, c, localize(c, "Successfully deleted message."));
 			}
 		}
 

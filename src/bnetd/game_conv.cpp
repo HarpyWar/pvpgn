@@ -992,7 +992,7 @@ namespace pvpgn
 
 					if ((game->type == game_type_diablo2closed))
 					{
-						eventlog(eventlog_level_debug, __FUNCTION__, "D2 bug workarround needed (open games tagged as closed)");
+						eventlog(eventlog_level_debug, __FUNCTION__, "D2 bug workaround needed (open games tagged as closed)");
 						game->type = game_type_diablo2open;
 					}
 				}
@@ -1013,7 +1013,7 @@ namespace pvpgn
 					If the corresponding bit is a '0' then subtract 1 from the character.
 					(We decode info data and remove the bitmask bytes from info data in following description)
 					0x09 -- 5 bytes (char[5], map options)
-					0x0e -- 1 bytes (0, seems to be a seperate sign)
+					0x0e -- 1 bytes (0, seems to be a separate sign)
 					0x0f -- 2 bytes (short, mapsize x)
 					0x11 -- 2 bytes (short, mapsize y)
 					0x13 -- 4 bytes (long, unknown, map checksum ?)
@@ -1037,7 +1037,7 @@ namespace pvpgn
 				pstr = _w3_decrypt_mapinfo(pstr);
 				if (!pstr) return -1;
 				/* after decryption we dont have the mask bytes anymore so offsets need
-				 * to be adjusted acordingly */
+				 * to be adjusted accordingly */
 				game_set_speed(game, w3speed_to_gspeed(bn_byte_get(*((bn_byte*)(pstr)))));
 				game_set_mapsize_x(game, bn_short_get(*((bn_short*)(pstr + 5))));
 				game_set_mapsize_y(game, bn_short_get(*((bn_short*)(pstr + 7))));

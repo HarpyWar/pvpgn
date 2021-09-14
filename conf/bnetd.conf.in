@@ -232,10 +232,10 @@ userflush = 3600
 # Number of users checked for updates at once. Higher values make sense if you 
 # either have very fast hardware or you don't have many number of accounts.
 # Lower values make sense if you have very high CPU usage on the system you run
-# the server (dont make it too low or your system will save accounts continously).
+# the server (dont make it too low or your system will save accounts continuously).
 # Modify this value ONLY if you know what you are doing!!
 userstep = 100
-# Flush connected users? Set "false" and they will never flushed untill logout (it will consume more memory but less CPU usage, because of no queries to a file)
+# Flush connected users? Set "false" and they will never flushed until logout (it will consume more memory but less CPU usage, because of no queries to a file)
 userflush_connected = true
 
 # How often to send user latency tests in seconds.
@@ -305,7 +305,7 @@ hide_temp_channels = true
 disc_is_loss = false
 
 # List additional game types to be counted as ladder games
-# Curently allowed types: topvbot, melee, ffa, oneonone
+# Currently allowed types: topvbot, melee, ffa, oneonone
 # Example: ladder_games = "topvbot,oneonone"
 ladder_games = "none"
 
@@ -510,7 +510,7 @@ initkill_timer = 120
 # This specifies the addresses where WOL connections should be accepted. See
 # the description of servaddrs for formatting information. Leave this field
 # blank if you do not want to accept WOL connections. If the wolv1 port is
-# not specifed then 4005 will be used. Also if wolv2 port is not specifed
+# not specified then 4005 will be used. Also if wolv2 port is not specified
 # then 4000 will be used. 
 # WOLv2 address includes servserv, game/chatting and ladder services.
 #
@@ -574,7 +574,7 @@ wol_autoupdate_password = "world96"
 # This specifies the addresses where telnet connections should be accepted.
 # See the description of servaddrs for formatting information. Leave this
 # field # blank if you do not want to accept telnet connections.  If the port
-# is not specifed then 23 will be used.
+# is not specified then 23 will be used.
 #telnetaddrs = ":23"
 
 ###############################################################################
@@ -582,7 +582,7 @@ wol_autoupdate_password = "world96"
 #-----------------------------------------------------------------------------#
 # this is for all the guys, that want Warcraft 3 ladder, but don't want their
 # server to run with MySQL support.
-# For each ladder (solo, team, ffa, at) a corresponing file is created,
+# For each ladder (solo, team, ffa, at) a corresponding file is created,
 # so it's easy to build your ladder pages with them
 
 # the following value determines, at which rate, these files are created

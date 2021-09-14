@@ -128,7 +128,7 @@ static int bnetd_oom_handler(void)
 
 	eventlog(eventlog_level_fatal, __FUNCTION__, "out of memory, forcing immediate shutdown");
 
-	/* shutdown immediatly */
+	/* shutdown immediately */
 	server_quit_delay(-1);
 
 	return 1;	/* ask xalloc codes to retry the allocation request */
@@ -137,7 +137,7 @@ static int bnetd_oom_handler(void)
 static int oom_setup(void)
 {
 	/* use calloc so it initilizez the memory so it will make some lazy
-	 * allocators really alocate it (ex. the linux kernel)
+	 * allocators really allocate it (ex. the linux kernel)
 	 */
 	oom_buffer = calloc(1, OOM_SAFE_MEM);
 	if (!oom_buffer) return -1;
@@ -349,7 +349,7 @@ int pre_server_startup(void)
 		return STATUS_MATCHLISTS_FAILURE;
 	}
 	if (fdwatch_init(prefs_get_max_connections())) {
-		eventlog(eventlog_level_error, __FUNCTION__, "error initilizing fdwatch");
+		eventlog(eventlog_level_error, __FUNCTION__, "error initializing fdwatch");
 		return STATUS_FDWATCH_FAILURE;
 	}
 

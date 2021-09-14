@@ -5209,7 +5209,7 @@ namespace pvpgn
 				return -1;
 			}
 
-			// reduntant line - it adds a caption to message box
+			// redundant line - it adds a caption to message box
 			std::string goodtext = args[1] + localize(c, "\n\n***************************\nBy {}", conn_get_username(c));
 
 			// caption

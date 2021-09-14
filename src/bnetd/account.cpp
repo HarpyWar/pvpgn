@@ -425,7 +425,7 @@ namespace pvpgn
 				return -1;
 			}
 
-			/* load accounts without force, indexed storage types wont be loading */
+			/* load accounts without force, indexed storage types won't be loading */
 			accountlist_load_all(ST_NONE);
 			maxuserid = storage->read_maxuserid();
 
@@ -697,7 +697,7 @@ namespace pvpgn
 			assert(passhash1 != NULL);
 
 			res = account_create(username, passhash1);
-			if (!res) return NULL; /* eventlog reported ealier */
+			if (!res) return NULL; /* eventlog reported earlier */
 
 			if (!accountlist_add_account(res)) {
 				account_destroy(res);
@@ -803,7 +803,7 @@ namespace pvpgn
 				}
 			}
 
-			// If friend isnt in list return -1 to tell func NO
+			// If friend isn't in list return -1 to tell func NO
 			return -1;
 		}
 

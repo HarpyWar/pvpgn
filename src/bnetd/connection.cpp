@@ -214,7 +214,7 @@ namespace pvpgn
 			if ((conn_get_class(c) == conn_class_irc) || (conn_get_class(c) == conn_class_wol)) {
 				/* We should start pinging the client after we received the first line ... */
 				/* NOTE: RFC2812 only suggests that PINGs are being sent
-				 * if no other activity is detected. However it explecitly
+				 * if no other activity is detected. However it explicitly
 				 * allows PINGs to be sent if there is activity on this
 				 * connection. In other words we just don't care :)
 				 */
@@ -3165,7 +3165,7 @@ namespace pvpgn
 		{
 			if (!c)
 			{
-				eventlog(eventlog_level_error, __FUNCTION__, "got NULL conection");
+				eventlog(eventlog_level_error, __FUNCTION__, "got NULL connection");
 				return -1;
 			}
 			if (c->protocol.chat.lastsender)
@@ -3274,7 +3274,7 @@ namespace pvpgn
 		extern int conn_set_routeconn(t_connection * c, t_connection * rc)
 		{
 			if (!c) {
-				eventlog(eventlog_level_error, __FUNCTION__, "got NULL conection");
+				eventlog(eventlog_level_error, __FUNCTION__, "got NULL connection");
 				return -1;
 			}
 			c->protocol.w3.routeconn = rc;

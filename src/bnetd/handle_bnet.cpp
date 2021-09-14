@@ -1285,7 +1285,7 @@ namespace pvpgn
 				if ((conn_get_clienttag(c) == CLIENTTAG_WARCRAFT3_UINT) || (conn_get_clienttag(c) == CLIENTTAG_WAR3XP_UINT))
 					packet_append_string(rpacket, prefs_get_war3_iconfile());
 				/* battle.net still sends "icons.bni" to sc/bw clients
-				 * clients request icons_STAR.bni seperatly */
+				 * clients request icons_STAR.bni separately */
 				/*	else if (std::strcmp(conn_get_clienttag(c),CLIENTTAG_STARCRAFT)==0)
 						packet_append_string(rpacket,prefs_get_star_iconfile());
 						else if (std::strcmp(conn_get_clienttag(c),CLIENTTAG_BROODWARS)==0)
@@ -2690,7 +2690,7 @@ namespace pvpgn
 				for (i = 1; i < MAX_TEAMSIZE; i++) {
 					if ((i < teammemcount)) {
 						if (!(members[i] = accountlist_find_account(invited_usernames[i - 1]))) {
-							eventlog(eventlog_level_error, __FUNCTION__, "got invitation for non-existant user \"{}\"", invited_usernames[i - 1]);
+							eventlog(eventlog_level_error, __FUNCTION__, "got invitation for non-existent user \"{}\"", invited_usernames[i - 1]);
 							return -1;
 						}
 					}
@@ -2769,7 +2769,7 @@ namespace pvpgn
 				 * five int's to fill
 				 * fill with uid's of all teammembers, including the inviter
 				 * and the rest with FFFFFFFF
-				 * to be used when sever recieves anongame search
+				 * to be used when sever receives anongame search
 				 * [Omega]
 				 */
 				for (i = 0; i < 5; i++) {
@@ -3055,7 +3055,7 @@ namespace pvpgn
 			}
 
 			if (!(account = accountlist_find_account(username))) {
-				eventlog(eventlog_level_error, __FUNCTION__, "requested claninfo for non-existant account");
+				eventlog(eventlog_level_error, __FUNCTION__, "requested claninfo for non-existent account");
 				return -1;
 			}
 
@@ -3117,7 +3117,7 @@ namespace pvpgn
 			}
 
 			if (!(account = accountlist_find_account(username))) {
-				eventlog(eventlog_level_error, __FUNCTION__, "requested profile for non-existant account");
+				eventlog(eventlog_level_error, __FUNCTION__, "requested profile for non-existent account");
 				return -1;
 			}
 			if ((rpacket = packet_create(packet_class_bnet))) {
@@ -5040,7 +5040,7 @@ namespace pvpgn
 			}
 			offset += (std::strlen(username) + 1);
 			if (packet_get_size(packet) < offset + 1) {
-				eventlog(eventlog_level_error, __FUNCTION__, "[{}] got bad CLAN_CREATEINVITEREPLY packet (mising status)", conn_get_socket(c));
+				eventlog(eventlog_level_error, __FUNCTION__, "[{}] got bad CLAN_CREATEINVITEREPLY packet (missing status)", conn_get_socket(c));
 				return -1;
 			}
 			status = *((char *)packet_get_data_const(packet, offset, 1));
@@ -5120,7 +5120,7 @@ namespace pvpgn
 				offset += (std::strlen(username) + 1);
 				if (packet_get_size(packet) < offset + 1)
 				{
-					eventlog(eventlog_level_error, __FUNCTION__, "[{}] got bad CLANMEMBER_RANKUPDATE_REQ packet (mising status)", conn_get_socket(c));
+					eventlog(eventlog_level_error, __FUNCTION__, "[{}] got bad CLANMEMBER_RANKUPDATE_REQ packet (missing status)", conn_get_socket(c));
 					packet_del_ref(rpacket);
 					return -1;
 				}
@@ -5132,7 +5132,7 @@ namespace pvpgn
 					&& (dest_member = clan_find_member_by_name(clan, username)) && (member != dest_member)) {
 					if ((status < CLAN_PEON) || (status > CLAN_SHAMAN)) {
 						/* PELISH: CLAN_NEW can not be promoted to anything
-						 * and also noone can be promoted to CLAN_CHIEFTAIN */
+						 * and also no one can be promoted to CLAN_CHIEFTAIN */
 						DEBUG1("trying to change to bad status {}", status);
 						bn_byte_set(&rpacket->u.server_clanmember_rankupdate_reply.result, SERVER_CLANMEMBER_RANKUPDATE_FAILED);
 					}
@@ -5287,7 +5287,7 @@ namespace pvpgn
 					else if (account_get_clanmember_forced(conn_get_account(conn))) {
 						response_code = CLAN_RESPONSE_NOT_FOUND;
 
-						// clan allready ful
+						// clan already ful
 					}
 					else if (clan_get_member_count(clan) >= prefs_get_clan_max_members()) {
 						response_code = CLAN_RESPONSE_CLAN_FULL;
@@ -5349,7 +5349,7 @@ namespace pvpgn
 			}
 			offset += (std::strlen(username) + 1);
 			if (packet_get_size(packet) < offset + 1) {
-				eventlog(eventlog_level_error, __FUNCTION__, "[{}] got bad CLAN_INVITEREPLY packet (mising status)", conn_get_socket(c));
+				eventlog(eventlog_level_error, __FUNCTION__, "[{}] got bad CLAN_INVITEREPLY packet (missing status)", conn_get_socket(c));
 				return -1;
 			}
 			status = *((char *)packet_get_data_const(packet, offset, 1));

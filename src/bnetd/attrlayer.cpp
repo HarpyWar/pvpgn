@@ -95,7 +95,7 @@ namespace pvpgn
 				next = elist_next(curr);
 			}
 
-			/* elist_for_each_safe splitted into separate startup for userstep function */
+			/* elist_for_each_safe split into separate startup for userstep function */
 			for (; curr != &loadedlist; curr = next, next = elist_next(curr)) {
 				if (!FLAG_ISSET(flags, FS_ALL) && tcount >= prefs_get_user_step()) break;
 
@@ -139,7 +139,7 @@ namespace pvpgn
 				next = elist_next(curr);
 			}
 
-			/* elist_for_each_safe splitted into separate startup for userstep function */
+			/* elist_for_each_safe split into separate startup for userstep function */
 			for (; curr != &dirtylist; curr = next, next = elist_next(curr)) {
 				if (!FLAG_ISSET(flags, FS_ALL) && tcount >= prefs_get_user_step()) break;
 

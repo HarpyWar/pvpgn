@@ -666,7 +666,7 @@ namespace pvpgn
 						{
 							if (!(sql->query(column->extra_cmd)))
 							{
-								eventlog(eventlog_level_info, __FUNCTION__, "sucessfully issued: {} {}", column->mode, column->extra_cmd);
+								eventlog(eventlog_level_info, __FUNCTION__, "successfully issued: {} {}", column->mode, column->extra_cmd);
 							}
 						}
 						/*
@@ -687,7 +687,7 @@ namespace pvpgn
 						{
 							if (!(sql->query(column->extra_cmd)))
 							{
-								eventlog(eventlog_level_info, __FUNCTION__, "sucessfully issued: {} {}", column->mode, column->extra_cmd);
+								eventlog(eventlog_level_info, __FUNCTION__, "successfully issued: {} {}", column->mode, column->extra_cmd);
 							}
 						}
 
@@ -698,12 +698,12 @@ namespace pvpgn
 				{
 					if (!(sql->query(sqlcmd->sql_command)))
 					{
-						eventlog(eventlog_level_info, __FUNCTION__, "sucessfully issued: {}", sqlcmd->sql_command);
+						eventlog(eventlog_level_info, __FUNCTION__, "successfully issued: {}", sqlcmd->sql_command);
 						if ((sqlcmd->mode != NULL) && (std::strcmp(sqlcmd->mode, "&&") == 0))
 						{
 							if (!(sql->query(sqlcmd->extra_cmd)))
 							{
-								eventlog(eventlog_level_info, __FUNCTION__, "sucessfully issued: {} {}", sqlcmd->mode, sqlcmd->extra_cmd);
+								eventlog(eventlog_level_info, __FUNCTION__, "successfully issued: {} {}", sqlcmd->mode, sqlcmd->extra_cmd);
 							}
 						}
 					}
@@ -713,7 +713,7 @@ namespace pvpgn
 						{
 							if (!(sql->query(sqlcmd->extra_cmd)))
 							{
-								eventlog(eventlog_level_info, __FUNCTION__, "sucessfully issued: {} {}", sqlcmd->mode, sqlcmd->extra_cmd);
+								eventlog(eventlog_level_info, __FUNCTION__, "successfully issued: {} {}", sqlcmd->mode, sqlcmd->extra_cmd);
 							}
 						}
 
@@ -742,7 +742,7 @@ namespace pvpgn
 			{
 				char * tmp1 = xstrdup(from);			/* copy of 'from' */
 				char * tmp2 = escape;
-				char * tmp3 = NULL;				/* begining of string to be escaped */
+				char * tmp3 = NULL;				/* beginning of string to be escaped */
 				char * tmp4 = (char *)xmalloc(std::strlen(tmp1) * 2);	/* escaped string */
 				unsigned int i, j;
 
@@ -754,7 +754,7 @@ namespace pvpgn
 
 					if (tmp1[i] == '\'') /* check if we find a string by checking for a single quote (') */
 					{
-						tmp3 = &tmp1[++i]; /* set tmp3 to the begining of the string to be escaped */
+						tmp3 = &tmp1[++i]; /* set tmp3 to the beginning of the string to be escaped */
 
 						for (; tmp1[i] && tmp1[i] != '\'' && i < len; i++); /* find the end of the string to be escaped */
 

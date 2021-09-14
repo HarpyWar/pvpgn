@@ -5648,7 +5648,7 @@ class binary_reader
 
     @return number of type @a NumberType
 
-    @note This function needs to respect the system's endianess, because
+    @note This function needs to respect the system's endianness, because
           bytes in CBOR and MessagePack are stored in network order (big
           endian) and therefore need reordering on little endian systems.
 
@@ -6197,7 +6197,7 @@ class binary_reader
     /// the number of characters read
     std::size_t chars_read = 0;
 
-    /// whether we can assume little endianess
+    /// whether we can assume little endianness
     const bool is_little_endian = little_endianess();
 };
 }
@@ -6891,7 +6891,7 @@ class binary_writer
     @param[in] n number of type @a NumberType
     @tparam NumberType the type of the number
 
-    @note This function needs to respect the system's endianess, because bytes
+    @note This function needs to respect the system's endianness, because bytes
           in CBOR, MessagePack, and UBJSON are stored in network order (big
           endian) and therefore need reordering on little endian systems.
     */
@@ -7117,7 +7117,7 @@ class binary_writer
     }
 
   private:
-    /// whether we can assume little endianess
+    /// whether we can assume little endianness
     const bool is_little_endian = binary_reader<BasicJsonType>::little_endianess();
 
     /// the output
@@ -13016,7 +13016,7 @@ class basic_json
     @return copy of the element at key @a key or @a default_value if @a key
     is not found
 
-    @throw type_error.306 if the JSON value is not an objec; in that case,
+    @throw type_error.306 if the JSON value is not an object; in that case,
     using `value()` with a key makes no sense.
 
     @complexity Logarithmic in the size of the container.

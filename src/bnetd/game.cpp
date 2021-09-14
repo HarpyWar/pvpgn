@@ -2387,7 +2387,7 @@ namespace pvpgn
 			if (game->type == game_type_ladder ||
 				game->type == game_type_ironman) return game->option == game_option_ladder_countasloss;
 
-			/* additional game types that are consideres ladder are always considered discasloss */
+			/* additional game types that are considered ladder are always considered discasloss */
 			if (game_match_type(game_get_type(game), prefs_get_ladder_games()) &&
 				game_match_name(game_get_name(game), prefs_get_ladder_prefix())) return 1;
 

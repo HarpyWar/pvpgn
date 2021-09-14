@@ -95,7 +95,7 @@ namespace pvpgn
 			}
 
 			if (!me) {
-				eventlog(eventlog_level_error, __FUNCTION__, "got NULL connecion");
+				eventlog(eventlog_level_error, __FUNCTION__, "got NULL connection");
 				return -1;
 			}
 
@@ -510,7 +510,7 @@ namespace pvpgn
 			channel = conn_get_channel(c);
 			if (channel_get_permanent(channel))
 			{
-				/* If not in a private channel, retreive number of mutual friend connected */
+				/* If not in a private channel, retrieve number of mutual friend connected */
 				t_list *flist = account_get_friends(conn_get_account(c));
 				t_elem const *curr;
 				t_friend *fr;
@@ -538,7 +538,7 @@ namespace pvpgn
 			}
 			else
 			{
-				/* If in a private channel, retreive all non-clan war3/w3xp users in the channel */
+				/* If in a private channel, retrieve all non-clan war3/w3xp users in the channel */
 				for (conn = channel_get_first(channel); conn; conn = channel_get_next())
 				{
 					t_account * acc;

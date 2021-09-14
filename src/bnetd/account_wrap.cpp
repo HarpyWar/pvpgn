@@ -2398,7 +2398,7 @@ namespace pvpgn
 		}
 
 
-		/* value = icons delimeted by space */
+		/* value = icons delimited by space */
 		extern int account_set_user_iconstash(t_account * account, t_clienttag clienttag, char const * value)
 		{
 			std::string key("Record\\" + tag_uint_to_str2(clienttag) + "\\iconstash");
@@ -2465,7 +2465,7 @@ namespace pvpgn
 		// Orcs - Peon, Grunt, Tauren, Far Seer, Thrall, Nothing
 		// Undead - Acolyle, Ghoul, Abomination, Lich, Tichondrius, Nothing
 		// Night Elves - Wisp, Archer, Druid of the Claw, Priestess of the Moon, Furion Stormrage, Nothing
-		// Demons - Nothing, ???(wich unit is nfgn), Infernal, Doom Guard, Pit Lord/Manaroth, Archimonde
+		// Demons - Nothing, ???(which unit is nfgn), Infernal, Doom Guard, Pit Lord/Manaroth, Archimonde
 		// ADDED TFT ICON BY DJP 07/16/2003
 		static const char * profile_code[12][6] = {
 			{ NULL, "ngrd", "nadr", "nrdr", "nbwm", NULL },

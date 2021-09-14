@@ -1300,7 +1300,7 @@ namespace pvpgn
 		{
 			switch (type) {
 			case wol_gameres_type_string:
-				DEBUG1("Procesor {}", (char *)data);
+				DEBUG1("Processor {}", (char *)data);
 				break;
 			default:
 				WARN1("got unknown gameres type {} for PROC", static_cast<int>(type));

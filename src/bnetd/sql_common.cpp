@@ -212,7 +212,7 @@ namespace pvpgn
 		{
 			if (sql == NULL)
 			{
-				eventlog(eventlog_level_error, __FUNCTION__, "sql not initilized");
+				eventlog(eventlog_level_error, __FUNCTION__, "sql not initialized");
 				return -1;
 			}
 
@@ -234,7 +234,7 @@ namespace pvpgn
 
 			if (sql == NULL)
 			{
-				eventlog(eventlog_level_error, __FUNCTION__, "sql not initilized");
+				eventlog(eventlog_level_error, __FUNCTION__, "sql not initialized");
 				return 0;
 			}
 
@@ -272,7 +272,7 @@ namespace pvpgn
 
 			if (!sql)
 			{
-				eventlog(eventlog_level_error, __FUNCTION__, "sql layer not initilized");
+				eventlog(eventlog_level_error, __FUNCTION__, "sql layer not initialized");
 				return -1;
 			}
 
@@ -356,7 +356,7 @@ namespace pvpgn
 
 			if (!sql)
 			{
-				eventlog(eventlog_level_error, __FUNCTION__, "sql layer not initilized");
+				eventlog(eventlog_level_error, __FUNCTION__, "sql layer not initialized");
 				return -1;
 			}
 
@@ -470,7 +470,7 @@ namespace pvpgn
 
 			if (!sql)
 			{
-				eventlog(eventlog_level_error, __FUNCTION__, "sql layer not initilized");
+				eventlog(eventlog_level_error, __FUNCTION__, "sql layer not initialized");
 				return -1;
 			}
 
@@ -567,7 +567,7 @@ namespace pvpgn
 
 			if (!sql)
 			{
-				eventlog(eventlog_level_error, __FUNCTION__, "sql layer not initilized");
+				eventlog(eventlog_level_error, __FUNCTION__, "sql layer not initialized");
 				return -1;
 			}
 
@@ -608,7 +608,7 @@ namespace pvpgn
 		{
 			if (!sql)
 			{
-				eventlog(eventlog_level_error, __FUNCTION__, "sql layer not initilized");
+				eventlog(eventlog_level_error, __FUNCTION__, "sql layer not initialized");
 				return -1;
 			}
 
@@ -632,7 +632,7 @@ namespace pvpgn
 
 			if (!sql)
 			{
-				eventlog(eventlog_level_error, __FUNCTION__, "sql layer not initilized");
+				eventlog(eventlog_level_error, __FUNCTION__, "sql layer not initialized");
 				return -1;
 			}
 
@@ -707,7 +707,7 @@ namespace pvpgn
 					team->level = std::atoi(row[11]);
 					team->rank = std::atoi(row[12]);
 
-					eventlog(eventlog_level_trace, __FUNCTION__, "succesfully loaded team {}", team->teamid);
+					eventlog(eventlog_level_trace, __FUNCTION__, "successfully loaded team {}", team->teamid);
 					cb(team);
 				load_team_failure:
 					;
@@ -732,7 +732,7 @@ namespace pvpgn
 
 			if (!sql)
 			{
-				eventlog(eventlog_level_error, __FUNCTION__, "sql layer not initilized");
+				eventlog(eventlog_level_error, __FUNCTION__, "sql layer not initialized");
 				return -1;
 			}
 
@@ -773,7 +773,7 @@ namespace pvpgn
 		{
 			if (!sql)
 			{
-				eventlog(eventlog_level_error, __FUNCTION__, "sql layer not initilized");
+				eventlog(eventlog_level_error, __FUNCTION__, "sql layer not initialized");
 				return -1;
 			}
 

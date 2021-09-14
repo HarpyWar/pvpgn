@@ -313,7 +313,7 @@ namespace pvpgn
 			std::strncpy(AccountName, readpos, MAX_USERNAME_LEN);
 			if (AccountName[MAX_USERNAME_LEN - 1] != 0)
 			{
-				eventlog(eventlog_level_error, __FUNCTION__, "max acccount name length exceeded");
+				eventlog(eventlog_level_error, __FUNCTION__, "max account name length exceeded");
 				return -1;
 			}
 			readpos += std::strlen(AccountName) + 1;
@@ -819,7 +819,7 @@ namespace pvpgn
 
 				/* levels 257 thru 355 */
 				if (level != plevel) {
-					eventlog(eventlog_level_info, __FUNCTION__, "level mis-match for {} ( {} != {} ) setting to 255", CharName, level, plevel);
+					eventlog(eventlog_level_info, __FUNCTION__, "level mismatch for {} ( {} != {} ) setting to 255", CharName, level, plevel);
 					bn_byte_set((bn_byte *)&charinfo[CHARINFO_PORTRAIT_LEVEL_OFFSET], 255);
 					bn_int_set((bn_int *)&charinfo[CHARINFO_SUMMARY_LEVEL_OFFSET], 255);
 				}
@@ -840,8 +840,8 @@ namespace pvpgn
 				 * from 100 to 256 d2gs does not send it
 				 * when value rolls over (level 256 = 0)
 				 * and charactar reaches level 257 (rolled over to level 1)
-				 * d2gs starts sending it agian until level 356 (rolled over to 100)
-				 * is reached agian. etc. etc. etc.
+				 * d2gs starts sending it again until level 356 (rolled over to 100)
+				 * is reached again. etc. etc. etc.
 				 */
 				if (level == 0) /* level 256, 512, 768, etc */
 					level = 255;
@@ -858,7 +858,7 @@ namespace pvpgn
 
 				/* if level in charinfo file is already set to 255,
 				 * then is must have been set when d2gs sent the charinfo
-				 * and got a level mis-match (levels 257 - 355)
+				 * and got a level mismatch (levels 257 - 355)
 				 * or level is actually 255. In eather case we set to 255
 				 * this should work for any level mod
 				 */

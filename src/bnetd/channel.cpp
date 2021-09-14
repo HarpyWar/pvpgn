@@ -473,7 +473,7 @@ namespace pvpgn
 			for (user = channel_get_first(channel); user; user = channel_get_next())
 			{
 				message_send_text(connection, message_type_adduser, user, NULL);
-				/* In WOL gamechannels we send JOINGAME ack explicitely to self */
+				/* In WOL gamechannels we send JOINGAME ack explicitly to self */
 				if (!conn_get_game(connection))
 					message_send_text(user, message_type_join, connection, NULL);
 			}
@@ -1595,7 +1595,7 @@ namespace pvpgn
 
 			acc = conn_get_account(c);
 
-			/* well... unfortunatly channel_get_name never returns NULL but "" instead
+			/* well... unfortunately channel_get_name never returns NULL but "" instead
 			   so we first have to check if user is in a channel at all */
 			if ((!conn_get_channel(c)) || (!(channel = channel_get_name(conn_get_channel(c)))))
 				return -1;

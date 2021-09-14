@@ -207,7 +207,7 @@ namespace pvpgn
 			if (tempparams) {
 				*tempparams++ = '\0';
 				if (tempparams[0] == ':') {
-					text = tempparams + 1; /* theres just text, no params. skip the colon */
+					text = tempparams + 1; /* there's just text, no params. skip the colon */
 				}
 				else {
 					for (i = 0; tempparams[i] != '\0'; i++) {

@@ -484,7 +484,7 @@ namespace pvpgn
 
 	/******************************************************/
 	/*
-	Sent in repsonse to COMPINFO1 along with COMPINFOREPLY.
+	Sent in response to COMPINFO1 along with COMPINFOREPLY.
 	Used for password hashing by the client.
 	*/
 #define SERVER_SESSIONKEY1 0x28ff
@@ -1321,7 +1321,7 @@ namespace pvpgn
 	{
 		t_bnet_header h;
 		bn_int	  count;	/* same as in req */
-		bn_byte	  fail;		/* != 0 if a problem occured */
+		bn_byte	  fail;		/* != 0 if a problem occurred */
 		/* profile-description */
 		/* profile-location */
 		/* bn_int clanTAG */
@@ -1657,7 +1657,7 @@ namespace pvpgn
 	} PACKED_ATTR() t_server_loginreply_w3;
 #define SERVER_LOGINREPLY_W3_MESSAGE_SUCCESS 0x00000000
 #define SERVER_LOGINREPLY_W3_MESSAGE_ALREADY 0x00000001 /* Account already logged on */
-#define SERVER_LOGINREPLY_W3_MESSAGE_BADACCT 0x00000001 /* Accoutn does not exist */
+#define SERVER_LOGINREPLY_W3_MESSAGE_BADACCT 0x00000001 /* Account does not exist */
 	/******************************************************/
 
 	/******************************************************/
@@ -2757,7 +2757,7 @@ namespace pvpgn
 		/* games */
 	} PACKED_ATTR() t_server_gamelistreply;
 
-#define SERVER_GAMELISTREPLY_GAME_SSTATUS_NOTFOUND	0x0 /* but also any other value diff from the ones bellow */
+#define SERVER_GAMELISTREPLY_GAME_SSTATUS_NOTFOUND	0x0 /* but also any other value diff from the ones below */
 #define SERVER_GAMELISTREPLY_GAME_SSTATUS_PASS		0x2 /* password incorrect */
 #define SERVER_GAMELISTREPLY_GAME_SSTATUS_FULL		0x3 /* game full */
 #define SERVER_GAMELISTREPLY_GAME_SSTATUS_STARTED	0x4 /* game started */
@@ -3299,7 +3299,7 @@ namespace pvpgn
 	typedef struct
 	{
 		t_bnet_header h;
-		/* FIXME: what is in here... is there a cooresponding
+		/* FIXME: what is in here... is there a corresponding
 		   server packet? */
 	} PACKED_ATTR() t_client_unknown_24;
 	/******************************************************/
@@ -3330,7 +3330,7 @@ namespace pvpgn
 
 	/******************************************************/
 	/*
-	Sent in repsonse to CLIENT_LADDERREQ
+	Sent in response to CLIENT_LADDERREQ
 
 	FF 2E AB 03 52 41 54 53   01 00 00 00 00 00 00 00    ....RATS........
 	00 00 00 00 0A 00 00 00   27 00 00 00 01 00 00 00    ........'.......
@@ -3800,7 +3800,7 @@ namespace pvpgn
 	/*3756:
 	Paquet #266
 	0x0000   FF 71 0A 00 05 00 00 00-00 00                     q........
-	<- Clan invitation = Sucessfully done */
+	<- Clan invitation = Successfully done */
 #define SERVER_CLAN_CREATEINVITEREPLY 0x71ff
 	typedef struct{
 		t_bnet_header        h;

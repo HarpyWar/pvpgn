@@ -1909,7 +1909,7 @@
       <translate></translate>
     </item>
     <item id="511" file="ipban.cpp" function="ipban_func_check">
-      <original>Error occured.</original>
+      <original>Error occurred.</original>
       <translate></translate>
     </item>
     <item id="512" file="ipban.cpp" function="ipban_func_check">
@@ -1985,7 +1985,7 @@
       <translate></translate>
     </item>
     <item id="441" file="mail.cpp" function="mail_func_delete">
-      <original>Succesfully deleted message.</original>
+      <original>Successfully deleted message.</original>
       <translate></translate>
     </item>
     <item id="436" file="mail.cpp" function="mail_func_read">

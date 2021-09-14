@@ -724,7 +724,7 @@ namespace pvpgn
 				message_send_text(c, message_type_info, c, localize(c, "IP not banned."));
 				break;
 			case -1:
-				message_send_text(c, message_type_error, c, localize(c, "Error occured."));
+				message_send_text(c, message_type_error, c, localize(c, "Error occurred."));
 				break;
 			default:
 				msgtemp = localize(c, "IP banned by rule #{}.", res);

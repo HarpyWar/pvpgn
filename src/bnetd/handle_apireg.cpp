@@ -843,11 +843,11 @@ namespace pvpgn
 				}
 				else {
 					if (!newnick) {
-						std::snprintf(message, sizeof(message), "Nick must be specifed!");
+						std::snprintf(message, sizeof(message), "Nick must be specified!");
 						std::snprintf(hresult, sizeof(hresult), "-2147221248");
 					}
 					else if (!newpass) {
-						std::snprintf(message, sizeof(message), "Pussword must be specifed!");
+						std::snprintf(message, sizeof(message), "Pussword must be specified!");
 						std::snprintf(hresult, sizeof(hresult), "-2147221248");
 					}
 					else if (account = accountlist_find_account(newnick)) {

@@ -196,7 +196,7 @@ namespace pvpgn
 			int	oldpos, newpos;
 
 			newpos = d2ladder_find_pos(d2ladder, info);
-			/* we currectly do nothing when character is being kick out of ladder for simple */
+			/* we currently do nothing when character is being kick out of ladder for simple */
 			/*
 			if (newpos<0 || newpos >= d2ladder->len) return 0;
 			*/
@@ -366,7 +366,7 @@ namespace pvpgn
 			if (!d2ladder_ladder_file) return -1;
 			fdladder = std::fopen(d2ladder_ladder_file, "rb");
 			if (!fdladder) {
-				eventlog(eventlog_level_error, __FUNCTION__, "canot open ladder file");
+				eventlog(eventlog_level_error, __FUNCTION__, "cannot open ladder file");
 				return -1;
 			}
 

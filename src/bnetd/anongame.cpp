@@ -472,7 +472,7 @@ namespace pvpgn
 					if (ta->tid != a->tid)
 						set = 0;
 				}
-				if (!set)		/* check if search packet has been recieved from each team member */
+				if (!set)		/* check if search packet has been received from each team member */
 					return 0;
 				break;
 			case CLIENT_FINDANONGAME_AT_SEARCH:
@@ -482,7 +482,7 @@ namespace pvpgn
 						return -1;
 					}
 				}
-				for (i = 0; i < teamsize; i++) {	/* check if search packet has been recieved from each team member */
+				for (i = 0; i < teamsize; i++) {	/* check if search packet has been received from each team member */
 					if (!(ta = conn_get_anongame(tc[i])))
 						return 0;
 					if (ta->tid != a->tid)
@@ -898,7 +898,7 @@ namespace pvpgn
 					delta = -delta;
 
 				if (level + delta < 0)
-					break;		/* cant really happen */
+					break;		/* can't really happen */
 
 			}
 			eventlog(eventlog_level_trace, __FUNCTION__, "[{}] Matching finished, not enough players (found {})", conn_get_socket(c), players[queue]);
@@ -917,7 +917,7 @@ namespace pvpgn
 			t_saf_pt2 *pt2;
 
 			/* FIXME: maybe periodically lookup w3routeaddr to support dynamic ips?
-			 * (or should dns lookup be even quick enough to do it everytime?)
+			 * (or should dns lookup be even quick enough to do it every time?)
 			 */
 
 			if (w3routeip == -1) {
@@ -1609,9 +1609,9 @@ namespace pvpgn
 		{
 			/* [smith] 20030427 fixed Big-Endian/Little-Endian conversion (Solaris bug) then
 			 * use  packet_append_data for append platform dependent data types - like
-			 * "int", cos this code was broken for BE platforms. it's rewriten in platform
+			 * "int", cos this code was broken for BE platforms. it's rewritten in platform
 			 * independent style whis usege bn_int and other bn_* like datatypes and
-			 * fuctions for wor with datatypes - bn_int_set(), what provide right
+			 * functions for wor with datatypes - bn_int_set(), what provide right
 			 * byteorder, not depended on LE/BE
 			 * fixed broken htonl() conversion for BE platforms - change it to
 			 * bn_int_nset(). i hope it's worked on intel too %) */

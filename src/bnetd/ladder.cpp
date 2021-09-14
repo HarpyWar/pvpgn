@@ -488,8 +488,8 @@ namespace pvpgn
 			/* we return the xp difference for the winner and the looser
 			 * we compute that from the xp charts also applying the loss factor for
 			 * lower level profiles
-			 * FIXME: ?! loss factor doesnt keep the sum of xp won/lost constant
-			 * DON'T CARE, cause current win/loss values aren't symetrical any more
+			 * FIXME: ?! loss factor does not keep the sum of xp won/lost constant
+			 * DON'T CARE, cause current win/loss values aren't symmetrical any more
 			 */
 			if (diff >= 0) {
 				*winxpdiff = xpcalc[absdiff].higher_winxp;

@@ -731,7 +731,7 @@ namespace pvpgn
 
 									   /* "\001ACTION " + text + "\001" + \0 */
 
-									   /* PELISH: WOLv1, DUNE2000 and RENEGADE shows emotes automaticaly to self */
+									   /* PELISH: WOLv1, DUNE2000 and RENEGADE shows emotes automatically to self */
 									   if ((me == dst) && ((tag_check_wolv1(conn_get_clienttag(dst))) ||
 										   (conn_get_clienttag(dst) == CLIENTTAG_DUNE2000_UINT) ||
 										   (conn_get_clienttag(dst) == CLIENTTAG_RENEGADE_UINT) ||
@@ -1461,7 +1461,7 @@ namespace pvpgn
 			char temp[MAX_IRC_MESSAGE_LEN];
 			char ** e;
 			/**
-			*  Heres the imput expected
+			*  Heres the input expected
 			*  KICK [channel] [kicked_user],[kicked_user2]
 			*
 			*  Heres the output expected
@@ -1477,7 +1477,7 @@ namespace pvpgn
 
 			if (e = irc_get_listelems(params[1]))
 			{
-				/* Make standart PvPGN KICK from RFC2812 KICK */
+				/* Make standard PvPGN KICK from RFC2812 KICK */
 				if (text)
 					std::snprintf(temp, sizeof(temp), "/kick %s %s", e[0], text);
 				else
@@ -1562,7 +1562,7 @@ namespace pvpgn
 					}
 				}
 
-				/* PELISH: Also tmpOP have setting modes alowed because all new channels have only tmpOP */
+				/* PELISH: Also tmpOP have setting modes allowed because all new channels have only tmpOP */
 				if ((channel_conn_is_tmpOP(channel, conn) != 1) &&
 					(account_get_auth_admin(acc, NULL) != 1) && (account_get_auth_admin(acc, ircname) != 1) &&
 					(account_get_auth_operator(acc, NULL) != 1) && (account_get_auth_operator(acc, ircname) != 1)) {
