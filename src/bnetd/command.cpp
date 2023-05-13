@@ -3220,6 +3220,9 @@ namespace pvpgn
 			t_hash       passhash;
 			char const * username;
 			std::string       pass;
+			char const *lookup = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-./";
+			static char encoded_apgar[9];
+			bool change_apgar = false;
 
 			std::vector<std::string> args = split_command(text, 2);
 
@@ -3265,6 +3268,38 @@ namespace pvpgn
 				return -1;
 			}
 
+			if ((pass.length() >= 8) && (tag_check_wolv1(conn_get_clienttag(c))) || (tag_check_wolv2(conn_get_clienttag(c))))
+			{
+				/* WOL only allows password length of 8 so we grab the first 8 and validate against a limited character set */
+				std::string apgar = pass.substr(0, 8);
+				bool invalid_apgar = apgar.find_first_not_of(lookup) != std::string::npos;
+
+				if (!invalid_apgar) {
+					for (i = 0; i < 8; i++)
+					{
+						unsigned char current = apgar[i];
+						unsigned char next = 0;
+						//stores current and next char to begin encoding
+						if (i < apgar.length())
+						{
+							next = apgar[apgar.length() - i];
+						}
+
+						if ((current & 1) > 0)
+						{
+							encoded_apgar[i] = lookup[((current << 1) & next) & 63];
+						}
+						else
+						{
+							encoded_apgar[i] = lookup[(current ^ next) & 63];
+						}
+					}
+					encoded_apgar[8] = '\0';
+					account_set_wol_apgar(account, encoded_apgar);
+					change_apgar = true;
+				}
+			}
+
 			for (i = 0; i < pass.length(); i++)
 				pass[i] = safe_tolower(pass[i]);
 
@@ -3276,13 +3311,26 @@ namespace pvpgn
 			if (account_set_pass(temp, hash_get_str(passhash)) < 0)
 			{
 				message_send_text(c, message_type_error, c, localize(c, "Unable to set password."));
+				if (!change_apgar)
+				{
+					msgtemp = "WOL ";
+					message_send_text(c, message_type_error, c, msgtemp + localize(c, "Unable to set password."));
+				}
 				return -1;
 			}
 
 			if (account_get_auth_admin(account, NULL) == 1 ||
 				account_get_auth_operator(account, NULL) == 1) {
+
 				msgtemp = localize(c, "Password for account {} updated.", account_get_uid(temp));
 				message_send_text(c, message_type_info, c, msgtemp);
+
+				if (change_apgar)
+				{
+					msgtemp = "WOL ";
+					msgtemp = msgtemp + localize(c, "Password for account {} updated.", account_get_uid(temp));
+					message_send_text(c, message_type_info, c, msgtemp);
+				}
 
 				msgtemp = localize(c, "Hash is: {}", hash_get_str(passhash));
 				message_send_text(c, message_type_info, c, msgtemp);
@@ -3290,6 +3338,13 @@ namespace pvpgn
 			else {
 				msgtemp = localize(c, "Password for account {} updated.", username);
 				message_send_text(c, message_type_info, c, msgtemp);
+
+				if (change_apgar)
+				{
+					msgtemp = "WOL ";
+					msgtemp = msgtemp + localize(c, "Password for account {} updated.", username);
+					message_send_text(c, message_type_info, c, msgtemp);
+				}
 			}
 
 			return 0;

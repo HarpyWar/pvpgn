@@ -31,6 +31,7 @@
 #include <nonstd/optional.hpp>
 
 #include "compat/strcasecmp.h"
+#include "compat/strncasecmp.h"
 #include "common/irc_protocol.h"
 #include "common/eventlog.h"
 #include "common/bnethash.h"
@@ -657,7 +658,7 @@ namespace pvpgn
 
 			conn_part_channel(conn);
 
-			if ((game = conn_get_game(conn)) && (game_get_status(game) == game_status_open))
+			if ((game = conn_get_game(conn)))
 				conn_set_game(conn, NULL, NULL, NULL, game_type_none, 0);
 
 			return 0;
@@ -1244,6 +1245,16 @@ namespace pvpgn
 					message_send_text(user, message_type_page, conn, text);
 					paged = true;
 				}
+				else if ((strncasecmp(params[0], prefs_get_servername(), 8) == 0) || (strncasecmp(params[0], server_get_hostname(), 8) == 0)) {
+					if (text[0] == '/') {
+						/* "/" commands (like "/help..." */
+						handle_command(conn, text);
+						paged = true;
+					}
+					else {
+						paged = true;
+					}
+				}
 
 				if (paged)
 					std::snprintf(_temp, sizeof(_temp), "0 :"); /* Page was successful */
@@ -1714,7 +1725,7 @@ namespace pvpgn
 								std::strcat(data, temp);
 							}
 							else
-								std::strcat(data, "NOTFOUND\r");
+								std::strcat(data, "NOTFOUND");
 						}
 					}
 					irc_unget_ladderelems(e);
