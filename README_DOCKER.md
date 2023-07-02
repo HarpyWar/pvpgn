@@ -83,7 +83,7 @@ mkdir -p /opt/pvpgn/etc /opt/pvpgn/var
 # copy configuration files and base assets from an image, all base configuration files in any image are the same
 # and btw yes, this command is not a mistake, please read ENTRYPOINT and CMD in Dockerfile specification for further explain
 docker run -v /opt/pvpgn/etc:/tmp/conf --rm --entrypoint cp pvpgn-server:bnetd-mysql -r /usr/local/etc/pvpgn/* /tmp/conf
-docker run -v /opt/pvpgn/var:/tmp/assets --rm --entrypoint cp pvpgn-server:bnetd-mysql -r /usr/local/etc/pvpgn/* /tmp/assets
+docker run -v /opt/pvpgn/var:/tmp/assets --rm --entrypoint cp pvpgn-server:bnetd-mysql -r /usr/local/var/pvpgn/* /tmp/assets
 ```
 Modify the copied configuration files to fit your needs. There are examples to configurating the server to use database in container, please check below. To configurate more, check [this link](https://pvpgn.pro/pvpgn_installation.html) to get more information of each components of the configuration files.
 
